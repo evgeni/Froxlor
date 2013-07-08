@@ -51,16 +51,6 @@ return array(
 									'default' => '/etc/apache2/apache2.key',
 									'save_method' => 'storeSettingField',
 							),
-							'system_ssl_ca_file' => array(
-									'label' => $lng['serversettings']['ssl']['ssl_ca_file'],
-									'settinggroup' => 'system',
-									'varname' => 'ssl_ca_file',
-									'type' => 'string',
-									'string_type' => 'file',
-									'string_emptyallowed' => true,
-									'default' => '',
-									'save_method' => 'storeSettingField',
-							),
 							'system_ssl_cert_chainfile' => array(
 									'label' => $lng['admin']['ipsandports']['ssl_cert_chainfile'],
 									'settinggroup' => 'system',

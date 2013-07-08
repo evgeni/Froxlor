@@ -167,9 +167,6 @@ class nginx
 					if ($row_ipsandports['ssl_key_file'] == '') {
 						$row_ipsandports['ssl_key_file'] = $this->settings['system']['ssl_key_file'];
 					}
-					if ($row_ipsandports['ssl_ca_file'] == '') {
-						$row_ipsandports['ssl_ca_file'] = $this->settings['system']['ssl_ca_file'];
-					}
 					if ($row_ipsandports['ssl_cert_file'] != '') {
 						$ssl_vhost = true;
 					}
@@ -219,9 +216,6 @@ class nginx
 					}
 					if ($row_ipsandports['ssl_key_file'] != '') {
 						$this->nginx_data[$vhost_filename] .= "\t" . 'ssl_certificate_key ' .makeCorrectFile($row_ipsandports['ssl_key_file']) . ';' .  "\n";
-					}
-					if ($row_ipsandports['ssl_ca_file'] != '') {
-						$this->nginx_data[$vhost_filename] .= 'ssl_client_certificate ' . makeCorrectFile($row_ipsandports['ssl_ca_file']) . ';' . "\n";
 					}
 				}
 

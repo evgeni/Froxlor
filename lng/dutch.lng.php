@@ -1159,10 +1159,8 @@ $lng['admin']['ipsandports']['webserverdefaultconfig'] = 'Standaarconfiguratie w
 $lng['admin']['ipsandports']['webserverdomainconfig'] = 'Domeinconfiguratie webserver';
 $lng['admin']['ipsandports']['webserverssldomainconfig'] = 'SSL-configuratie webserver';
 $lng['admin']['ipsandports']['ssl_key_file'] = 'Pad naar SSL keyfile';
-$lng['admin']['ipsandports']['ssl_ca_file'] = 'Pad naar SSL CA certificaat';
 $lng['admin']['ipsandports']['default_vhostconf_domain'] = 'Standaard VHost-instellingen voor iedere domeincontainer';
 $lng['serversettings']['ssl']['ssl_key_file'] = 'Pad naar SSL keyfile';
-$lng['serversettings']['ssl']['ssl_ca_file'] = 'Pad naar SSL CA certificaat';
 
 $lng['error']['usernamealreadyexists'] = 'De gebruikersnaam %s is reeds in gebruik.';
 

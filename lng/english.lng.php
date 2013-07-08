@@ -1202,10 +1202,8 @@ $lng['admin']['ipsandports']['webserverdefaultconfig'] = 'Webserver default conf
 $lng['admin']['ipsandports']['webserverdomainconfig'] = 'Webserver domain config';
 $lng['admin']['ipsandports']['webserverssldomainconfig'] = 'Webserver SSL config';
 $lng['admin']['ipsandports']['ssl_key_file'] = 'Path to the SSL Keyfile';
-$lng['admin']['ipsandports']['ssl_ca_file'] = 'Path to the SSL CA certificate';
 $lng['admin']['ipsandports']['default_vhostconf_domain'] = 'Default vHost-settings for every domain container';
 $lng['serversettings']['ssl']['ssl_key_file'] = 'Path to the SSL Keyfile';
-$lng['serversettings']['ssl']['ssl_ca_file'] = 'Path to the SSL CA certificate';
 
 $lng['error']['usernamealreadyexists'] = 'The username %s already exists.';
 
@@ -1947,13 +1945,11 @@ $lng['panel']['ssleditor'] = 'SSL settings for this domain';
 $lng['admin']['ipsandports']['ssl_paste_description'] = 'Paste your complete certificate content in the textbox';
 $lng['admin']['ipsandports']['ssl_cert_file_content'] = 'Content of the ssl certificate';
 $lng['admin']['ipsandports']['ssl_key_file_content'] = 'Content of the ssl (private-) key file';
-$lng['admin']['ipsandports']['ssl_ca_file_content'] = 'Content of the ssl CA file (optional)';
 $lng['admin']['ipsandports']['ssl_cert_chainfile_content'] = 'Content of the certificate chainfile (optional)';
 $lng['error']['sslcertificateismissingprivatekey'] = 'You need to specify a private key for your certificate';
 $lng['error']['sslcertificatewrongdomain'] = 'The given certificate does not belong to this domain';
 $lng['error']['sslcertificateinvalidcert'] = 'The given certificate-content does not seem to be a valid certificate';
 $lng['error']['sslcertificateinvalidcertkeypair'] = 'The given private-key does not belong to the given certificate';
-$lng['error']['sslcertificateinvalidca'] = 'The given CA certificate data does not seem to be a valid certificate';
 $lng['error']['sslcertificateinvalidchain'] = 'The given certificate chain data does not seem to be a valid certificate';
 $lng['serversettings']['customerssl_directory']['title'] = 'Webserver customer-ssl certificates-directory';
 $lng['serversettings']['customerssl_directory']['description'] = 'Where should customer-specified ssl-certificates be created?';

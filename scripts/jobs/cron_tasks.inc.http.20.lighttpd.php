@@ -179,16 +179,16 @@ class lighttpd
 					$row_ipsandports['ssl_cert_file'] = $this->settings['system']['ssl_cert_file'];
 				}
 
-				if ($row_ipsandports['ssl_ca_file'] == '') {
-					$row_ipsandports['ssl_ca_file'] = $this->settings['system']['ssl_ca_file'];
+				if ($row_ipsandports['ssl_cert_chainfile'] == '') {
+					$row_ipsandports['ssl_cert_chainfile'] = $this->settings['system']['ssl_cert_chainfile'];
 				}
 				
 				if ($row_ipsandports['ssl_cert_file'] != '') {
 					$this->lighttpd_data[$vhost_filename].= 'ssl.engine = "enable"' . "\n";
 					$this->lighttpd_data[$vhost_filename].= 'ssl.pemfile = "' . makeCorrectFile($row_ipsandports['ssl_cert_file']) . '"' . "\n";
 
-					if ($row_ipsandports['ssl_ca_file'] != '') {
-						$this->lighttpd_data[$vhost_filename].= 'ssl.ca-file = "' . makeCorrectFile($row_ipsandports['ssl_ca_file']) . '"' . "\n";
+					if ($row_ipsandports['ssl_cert_chainfile'] != '') {
+						$this->lighttpd_data[$vhost_filename].= 'ssl.ca-file = "' . makeCorrectFile($row_ipsandports['ssl_cert_chainfile']) . '"' . "\n";
 					}
 				}
 			}
@@ -395,7 +395,7 @@ class lighttpd
 		$domain['ip'] = $ipandport['ip'];
 		$domain['port'] = $ipandport['port'];
 		$domain['ssl_cert_file'] = $ipandport['ssl_cert_file'];
-		$domain['ssl_ca_file'] = $ipandport['ssl_ca_file'];
+		$domain['ssl_cert_chainfile'] = $ipandport['ssl_cert_chainfile'];
 
 		// SSL STUFF
 		$dssl = new DomainSSL($this->settings, $this->db);
@@ -475,16 +475,16 @@ class lighttpd
 				$domain['ssl_cert_file'] = $this->settings['system']['ssl_cert_file'];
 			}
 
-			if ($domain['ssl_ca_file'] == '') {
-				$domain['ssl_ca_file'] = $this->settings['system']['ssl_ca_file'];
+			if ($domain['ssl_cert_chainfile'] == '') {
+				$domain['ssl_cert_chainfile'] = $this->settings['system']['ssl_cert_chainfile'];
 			}
 			
 			if ($domain['ssl_cert_file'] != '') {
 				$ssl_settings.= 'ssl.engine = "enable"' . "\n";
 				$ssl_settings.= 'ssl.pemfile = "' . makeCorrectFile($domain['ssl_cert_file']) . '"' . "\n";
 
-				if ($domain['ssl_ca_file'] != '') {
-					$ssl_settings.= 'ssl.ca-file = "' . makeCorrectFile($domain['ssl_ca_file']) . '"' . "\n";
+				if ($domain['ssl_cert_chainfile'] != '') {
+					$ssl_settings.= 'ssl.ca-file = "' . makeCorrectFile($domain['ssl_cert_chainfile']) . '"' . "\n";
 				}
 			}
 		}

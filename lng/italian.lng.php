@@ -1183,10 +1183,8 @@ $lng['admin']['ipsandports']['webserverdefaultconfig'] = 'Configurazione predefi
 $lng['admin']['ipsandports']['webserverdomainconfig'] = 'Configurazione Dominio Webserver';
 $lng['admin']['ipsandports']['webserverssldomainconfig'] = 'COnfigura SSL Webserver';
 $lng['admin']['ipsandports']['ssl_key_file'] = 'Percorso al Keyfile SSL';
-$lng['admin']['ipsandports']['ssl_ca_file'] = 'Percorso al CA certificate SSL';
 $lng['admin']['ipsandports']['default_vhostconf_domain'] = 'Impostazioni predefinite vhost per ogni contenitore di dominio';
 $lng['serversettings']['ssl']['ssl_key_file'] = 'Percorso al Keyfile SSL';
-$lng['serversettings']['ssl']['ssl_ca_file'] = 'Percorso al CA certificate SSL';
 
 $lng['error']['usernamealreadyexists'] = 'Esiste già il nome utente: %s';
 

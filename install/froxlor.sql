@@ -267,7 +267,6 @@ CREATE TABLE `panel_ipsandports` (
   `ssl` tinyint(4) NOT NULL default '0',
   `ssl_cert_file` varchar(255) NOT NULL,
   `ssl_key_file` varchar(255) NOT NULL,
-  `ssl_ca_file` varchar(255) NOT NULL,
   `default_vhostconf_domain` text NOT NULL,
   `ssl_cert_chainfile` varchar(255) NOT NULL,
   `docroot` varchar(255) NOT NULL default '',
@@ -465,7 +464,6 @@ INSERT INTO `panel_settings` (`settinggroup`, `varname`, `value`) VALUES
 	('system', 'index_file_extension', 'html'),
 	('system', 'mod_fcgid_maxrequests', '250'),
 	('system', 'ssl_key_file','/etc/apache2/apache2.key'),
-	('system', 'ssl_ca_file', ''),
 	('system', 'debug_cron', '0'),
 	('system', 'store_index_file_subs', '1'),
 	('system', 'stdsubdomain', ''),
@@ -926,7 +924,6 @@ CREATE TABLE IF NOT EXISTS `domain_ssl_settings` (
   `domainid` int(11) NOT NULL,
   `ssl_cert_file` text NOT NULL,
   `ssl_key_file` text NOT NULL,
-  `ssl_ca_file` text NOT NULL,
   `ssl_cert_chainfile` text NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM CHARSET=utf8 COLLATE=utf8_general_ci;

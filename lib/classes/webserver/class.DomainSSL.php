@@ -45,8 +45,8 @@ class DomainSSL {
 
 	/**
 	 * read domain-related (or if empty, parentdomain-related) ssl-certificates from the database
-	 * and (if not empty) set the corresponding array-indices (ssl_cert_file, ssl_key_file,
-	 * ssl_ca_file and ssl_cert_chainfile). Hence the parameter as reference.
+	 * and (if not empty) set the corresponding array-indices (ssl_cert_file, ssl_key_file
+	 * and ssl_cert_chainfile). Hence the parameter as reference.
 	 *
 	 * @param array $domain domain-array as reference so we can set the corresponding array-indices
 	 *
@@ -82,12 +82,8 @@ class DomainSSL {
 					'ssl_key_file' => makeCorrectFile($sslcertpath.'/'.$domain['domain'].'.key')
 			);
 			// initialize optional files
-			$ssl_files['ssl_ca_file'] = '';
 			$ssl_files['ssl_cert_chainfile'] = '';
 			// set them if they are != empty
-			if ($dom_certs['ssl_ca_file'] != '') {
-				$ssl_files['ssl_ca_file'] = makeCorrectFile($sslcertpath.'/'.$domain['domain'].'_CA.pem');
-			}
 			if ($dom_certs['ssl_cert_chainfile'] != '') {
 				$ssl_files['ssl_cert_chainfile'] = makeCorrectFile($sslcertpath.'/'.$domain['domain'].'_chain.pem');
 			}
@@ -104,7 +100,6 @@ class DomainSSL {
 			// override corresponding array values
 			$domain['ssl_cert_file'] = $ssl_files['ssl_cert_file'];
 			$domain['ssl_key_file'] = $ssl_files['ssl_key_file'];
-			$domain['ssl_ca_file'] = $ssl_files['ssl_ca_file'];
 			$domain['ssl_cert_chainfile'] = $ssl_files['ssl_cert_chainfile'];
 		}
 

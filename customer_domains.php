@@ -654,7 +654,6 @@ elseif ($page == 'domainssleditor') {
 
 			$ssl_cert_file = isset($_POST['ssl_cert_file']) ? $_POST['ssl_cert_file'] : '';
 			$ssl_key_file = isset($_POST['ssl_key_file']) ? $_POST['ssl_key_file'] : '';
-			$ssl_ca_file = isset($_POST['ssl_ca_file']) ? $_POST['ssl_ca_file'] : '';
 			$ssl_cert_chainfile = isset($_POST['ssl_cert_chainfile']) ? $_POST['ssl_cert_chainfile'] : '';
 			$do_insert = isset($_POST['do_insert']) ? (($_POST['do_insert'] == 1) ? true : false) : false;
 
@@ -667,7 +666,6 @@ elseif ($page == 'domainssleditor') {
 			// no cert-file given -> forget everything
 			if ($ssl_cert_file == '') {
 				$ssl_key_file = '';
-				$ssl_ca_file = '';
 				$ssl_cert_chainfile = '';
 				$do_verify = false;
 			}
@@ -698,13 +696,6 @@ elseif ($page == 'domainssleditor') {
 					}
 
 					// check optional stuff
-					if ($ssl_ca_file != '') {
-						$ca_content = openssl_x509_parse($ssl_ca_file);
-						if (!is_array($ca_content)) {
-							// invalid
-							standard_error('sslcertificateinvalidca');
-						}
-					}
 					if ($ssl_cert_chainfile != '') {
 						$chain_content = openssl_x509_parse($ssl_cert_chainfile);
 						if (!is_array($chain_content)) {
@@ -727,7 +718,6 @@ elseif ($page == 'domainssleditor') {
 			$db->query($qrystart." `".TABLE_PANEL_DOMAIN_SSL_SETTINGS."` SET
 					`ssl_cert_file` = '".$db->escape($ssl_cert_file)."',
 					`ssl_key_file` = '".$db->escape($ssl_key_file)."',
-					`ssl_ca_file` = '".$db->escape($ssl_ca_file)."',
 					`ssl_cert_chainfile` = '".$db->escape($ssl_cert_chainfile)."'
 					".$qrywhere." `domainid`='".(int)$id."';"
 			);
@@ -746,7 +736,6 @@ elseif ($page == 'domainssleditor') {
 			$result = array(
 				'ssl_cert_file' => '',
 				'ssl_key_file' => '',
-				'ssl_ca_file' => '',
 				'ssl_cert_chainfile' => ''
 			);
 			$do_insert = true;

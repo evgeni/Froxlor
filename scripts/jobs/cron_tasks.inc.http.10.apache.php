@@ -300,10 +300,6 @@ class apache
 						$row_ipsandports['ssl_key_file'] = $this->settings['system']['ssl_key_file'];
 					}
 
-					if ($row_ipsandports['ssl_ca_file'] == '') {
-						$row_ipsandports['ssl_ca_file'] = $this->settings['system']['ssl_ca_file'];
-					}
-
 					// #418
 					if ($row_ipsandports['ssl_cert_chainfile'] == '') {
 						$row_ipsandports['ssl_cert_chainfile'] = $this->settings['system']['ssl_cert_chainfile'];
@@ -315,10 +311,6 @@ class apache
 
 						if ($row_ipsandports['ssl_key_file'] != '') {
 							$this->virtualhosts_data[$vhosts_filename] .= ' SSLCertificateKeyFile ' . makeCorrectFile($row_ipsandports['ssl_key_file']) . "\n";
-						}
-
-						if ($row_ipsandports['ssl_ca_file'] != '') {
-							$this->virtualhosts_data[$vhosts_filename] .= ' SSLCACertificateFile ' . makeCorrectFile($row_ipsandports['ssl_ca_file']) . "\n";
 						}
 
 						// #418
@@ -599,7 +591,6 @@ class apache
 		$domain['port'] = $ipandport['port'];
 		$domain['ssl_cert_file'] = $ipandport['ssl_cert_file'];
 		$domain['ssl_key_file'] = $ipandport['ssl_key_file'];
-		$domain['ssl_ca_file'] = $ipandport['ssl_ca_file'];
 		// #418
 		$domain['ssl_cert_chainfile'] = $ipandport['ssl_cert_chainfile'];
 
@@ -637,10 +628,6 @@ class apache
 				$domain['ssl_key_file'] = $this->settings['system']['ssl_key_file'];
 			}
 
-			if ($domain['ssl_ca_file'] == '') {
-				$domain['ssl_ca_file'] = $this->settings['system']['ssl_ca_file'];
-			}
-
 			// #418
 			if ($domain['ssl_cert_chainfile'] == '') {
 				$domain['ssl_cert_chainfile'] = $this->settings['system']['ssl_cert_chainfile'];
@@ -652,10 +639,6 @@ class apache
 
 				if ($domain['ssl_key_file'] != '') {
 					$vhost_content .= '  SSLCertificateKeyFile ' . makeCorrectFile($domain['ssl_key_file']) . "\n";
-				}
-
-				if ($domain['ssl_ca_file'] != '') {
-					$vhost_content .= '  SSLCACertificateFile ' . makeCorrectFile($domain['ssl_ca_file']) . "\n";
 				}
 
 				// #418

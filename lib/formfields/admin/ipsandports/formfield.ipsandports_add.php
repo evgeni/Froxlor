@@ -121,10 +121,6 @@ return array(
 						'label' => $lng['admin']['ipsandports']['ssl_key_file'],
 						'type' => 'text'
 					),
-					'ssl_ca_file' => array(
-						'label' => $lng['admin']['ipsandports']['ssl_ca_file'],
-						'type' => 'text'
-					),
 					'ssl_cert_chainfile' => array(
 						'label' => $lng['admin']['ipsandports']['ssl_cert_chainfile'],
 						'type' => 'text'

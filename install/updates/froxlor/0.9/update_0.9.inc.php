@@ -2147,5 +2147,11 @@ if (isFroxlorVersion('0.9.29-dev4')) {
 	$db->query("INSERT INTO `panel_settings` SET `settinggroup` = 'phpfpm', `varname` = 'vhost_defaultini', `value` = '".(int)$dval."'");
 	lastStepStatus(0);
 
+	showUpdateStep("removing duplicate ca_file setting", true);
+	$db->query("DELETE FROM `panel_settings` WHERE `settinggroup`='system' AND `varname`='ssl_ca_file'");
+	$db->query("ALTER TABLE `panel_ipsandports` DROP `ssl_ca_file`");
+	$db->query("ALTER TABLE `domain_ssl_settings` DROP `ssl_ca_file`");
+	lastStepStatus(0);
+
 	updateToVersion('0.9.29-rc1');
 }

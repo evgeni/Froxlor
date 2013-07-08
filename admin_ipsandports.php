@@ -151,13 +151,11 @@ if($page == 'ipsandports'
 				$ssl = intval($_POST['ssl']);
 				$ssl_cert_file = validate($_POST['ssl_cert_file'], 'ssl_cert_file');
 				$ssl_key_file = validate($_POST['ssl_key_file'], 'ssl_key_file');
-				$ssl_ca_file = validate($_POST['ssl_ca_file'], 'ssl_ca_file');
 				$ssl_cert_chainfile = validate($_POST['ssl_cert_chainfile'], 'ssl_cert_chainfile');
 			} else {
 				$ssl = 0;
 				$ssl_cert_file = '';
 				$ssl_key_file = '';
-				$ssl_ca_file = '';
 				$ssl_cert_chainfile = '';
 			}
 			
@@ -196,11 +194,6 @@ if($page == 'ipsandports'
 				$ssl_key_file = makeCorrectFile($ssl_key_file);
 			}
 
-			if($ssl_ca_file != '')
-			{
-				$ssl_ca_file = makeCorrectFile($ssl_ca_file);
-			}
-
 			if($ssl_cert_chainfile != '')
 			{
 				$ssl_cert_chainfile = makeCorrectFile($ssl_cert_chainfile);
@@ -235,7 +228,6 @@ if($page == 'ipsandports'
 						`ssl` = '" . (int)$ssl . "', 
 						`ssl_cert_file` = '" . $db->escape($ssl_cert_file) . "', 
 						`ssl_key_file` = '" . $db->escape($ssl_key_file) . "', 
-						`ssl_ca_file` = '" . $db->escape($ssl_ca_file) . "',
 						`ssl_cert_chainfile` = '" . $db->escape($ssl_cert_chainfile) . "', 
 						`default_vhostconf_domain` = '" . $db->escape($default_vhostconf_domain) . "',
 						`docroot` = '" . $db->escape($docroot) . "';
@@ -307,13 +299,11 @@ if($page == 'ipsandports'
 					$ssl = 1;
 					$ssl_cert_file = validate($_POST['ssl_cert_file'], 'ssl_cert_file');
 					$ssl_key_file = validate($_POST['ssl_key_file'], 'ssl_key_file');
-					$ssl_ca_file = validate($_POST['ssl_ca_file'], 'ssl_ca_file');
 					$ssl_cert_chainfile = validate($_POST['ssl_cert_chainfile'], 'ssl_cert_chainfile');
 				} else {
 					$ssl = 0;
 					$ssl_cert_file = '';
 					$ssl_key_file = '';
-					$ssl_ca_file = '';
 					$ssl_cert_chainfile = '';
 				}
 				
@@ -350,11 +340,6 @@ if($page == 'ipsandports'
 				if($ssl_key_file != '')
 				{
 					$ssl_key_file = makeCorrectFile($ssl_key_file);
-				}
-
-				if($ssl_ca_file != '')
-				{
-					$ssl_ca_file = makeCorrectFile($ssl_ca_file);
 				}
 
 				if($ssl_cert_chainfile != '')
@@ -397,7 +382,6 @@ if($page == 'ipsandports'
 						`ssl` = '" . (int)$ssl . "', 
 						`ssl_cert_file` = '" . $db->escape($ssl_cert_file) . "', 
 						`ssl_key_file` = '" . $db->escape($ssl_key_file) . "', 
-						`ssl_ca_file` = '" . $db->escape($ssl_ca_file) . "',
 						`ssl_cert_chainfile` = '" . $db->escape($ssl_cert_chainfile) . "', 
 						`default_vhostconf_domain` = '" . $db->escape($default_vhostconf_domain) . "',
 						`docroot` = '" . $db->escape($docroot) . "' 

@@ -128,11 +128,6 @@ return array(
 						'type' => 'text',
 						'value' => $result['ssl_key_file']
 					),
-					'ssl_ca_file' => array(
-						'label' => $lng['admin']['ipsandports']['ssl_ca_file'],
-						'type' => 'text',
-						'value' => $result['ssl_ca_file']
-					),
 					'ssl_cert_chainfile' => array(
 						'label' => $lng['admin']['ipsandports']['ssl_cert_chainfile'],
 						'type' => 'text',
